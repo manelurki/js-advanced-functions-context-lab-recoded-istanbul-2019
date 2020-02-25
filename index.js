@@ -20,3 +20,19 @@ let allWagesFor = function () {
 
     return payable
 }
+function createEmployeeRecord(arr){
+  return{
+    firstName: arr[0],
+    familyName: arr[1],
+    title: arr[2],
+    payPerHour: arr[3],
+    timeInEvents: [],
+    timeOutEvents: [],
+  }
+}function createEmployeeRecords(arr){
+  return arr.map(i=> createEmployeeRecord(i) )
+}
+
+function createEmployees(arr){
+  return arr.map(i => createEmployeeRecord(i) )
+}
