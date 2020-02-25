@@ -61,3 +61,12 @@ function createTimeOutEvent(date){
 
   return this;
 }
+function hoursWorkedOnDate(date){
+ const outryHour = this.timeOutEvents.find(event => event.date === date)
+ const entryHour = this.timeInEvents.find(event => event.date === date)
+ return (outryHour.hour - entryHour.hour)/100
+}
+
+function wagesEarnedOnDate(date){
+ return hoursWorkedOnDate.call(this,date) * this.payPerHour;
+}
