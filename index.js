@@ -70,3 +70,16 @@ function hoursWorkedOnDate(date){
 function wagesEarnedOnDate(date){
  return hoursWorkedOnDate.call(this,date) * this.payPerHour;
 }
+function findEmployeebyFirstName(srcArr,firstName){
+const result = srcArr.find(elm => elm.firstName === firstName ) 
+return result;
+}
+
+function calculatePayroll(srcArr){
+  const total = srcArr.reduce((memo,curr)=>{
+    const dates= curr.timeInEvents.map(elem => elem.date)
+    return memo += dates.reduce((tot,val)=>tot += wagesEarnedOnDate.call(curr,val),0)
+  },0)
+  return total;
+}
+
