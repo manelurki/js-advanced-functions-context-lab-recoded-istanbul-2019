@@ -36,3 +36,28 @@ function createEmployeeRecord(arr){
 function createEmployees(arr){
   return arr.map(i => createEmployeeRecord(i) )
 }
+function createTimeInEvent(date){
+  let dates=date.split(" ");
+  let event={};
+
+  event["type"]="TimeIn";
+
+  event["date"]=dates[0];
+  event["hour"]=parseInt(dates[1]);
+  this.timeInEvents.push(event);
+
+  return this;
+}
+
+
+function createTimeOutEvent(date){
+  let dates=date.split(" ");
+  let event={};
+
+  event["type"]="TimeOut";
+  event["date"]=dates[0];
+  event["hour"]=parseInt(dates[1]);
+  this.timeOutEvents.push(event);
+
+  return this;
+}
